@@ -116,3 +116,48 @@ int main(){
     printf("enter a string of characters : string length = %d", count);
     return 0;
 }
+------------ Exercise 6
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int main(){
+srand(time(NULL));
+char reponse;
+int fin=0;
+int guess;
+int trouve;
+int essais;
+do{
+    int nb = random() % 1000;
+    essais = 0;
+    trouve = 0;
+    do{
+      printf("entrez votre nombre / enter your guess : ");
+      scanf("%d", &guess);
+      if(guess == nb){
+          printf("trouve // found\n");
+          trouve = 1;
+      }
+      else{
+            if(nb > guess){
+                  printf("c'est plus grand / It's greater\n");
+            }
+            else{
+                  printf("c'est plus petit / it's less\n");
+            }
+            essais++;
+      }
+      }while((essais < 10) && (trouve == 0));
+      if(essais <10)
+          printf("Success in %d trials\n", essais);
+      else
+          printf("failed: the number was %d\n", nb);
+      printf("do you want to play again?");
+      //getchar();
+      response = getchar();
+      if(response != 'O')
+          fin = 1;
+}while(!fin);
+return 0;
+}
