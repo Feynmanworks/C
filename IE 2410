@@ -1,1 +1,118 @@
+------------ Exercise 1
+Input	Result
+6
+-4
+12
+-1
+0
+enter a list of integers until you enter 0
+the number of entries is 4
+the average is 3.25
+the lowest value is -4
+the largest value is 12
 
+#include<stdio.h>
+#include<limits.h>
+
+int main()
+{
+int n;
+int count=0, sum=0;
+int min=INT_MAX; 
+int max=INT_MIN;
+
+printf("enter a list of integers until you enter 0\n");
+while(scanf("%d", &n)!= EOF && n!=0)
+{
+count++;
+if(n>max){
+  max = n;
+}
+if(n<min){
+  min = n;
+}
+sum += n;
+}
+
+if(count>0){
+ printf("the number of entries is %d\n",count);
+ printf("the average is %.2f\n", (float)sum/count);
+ printf("the lowest value is %d\n", min);
+ printf("the largest value is %d\n", max);
+}
+return 0;
+}
+
+
+------------ Exercise 2
+#include<stdio.h>
+
+int main(){
+    for(int i=97; i<= 122; i++){
+        printf("%c %d\n", i, i);
+    }
+    
+    for(int i=65; i<= 90; i++){
+        printf("%c %d\n", i, i);
+    }
+    return 0;
+}
+
+------------ Exercise 3
+#include<stdio.h>
+int main(){
+    int count;
+    int n;
+    int pos=0;
+    int neg=0;
+    int null=0;
+    printf("how many integers will you enter\n");
+    scanf("%d", &count);
+    
+    for(int i = 0; i < count; i++){
+        scanf("%d", &n);
+        printf("enter the number %d\n", i);
+    
+        if(n > 0)
+            pos++;
+        else if(n < 0)
+            neg++;
+        else 
+            null++;
+    }
+    printf("the number of positive integers is %d\n", pos);
+    printf("the number of negative integers is %d\n", neg);
+    printf("the number of zeros is %d\n", null);
+    return 0;
+}
+
+------------ Exercise 4
+Write a program that reads an integer from the user and prints out each digit of the number on its own line.
+#include<stdio.h>
+int main(){
+    int n;
+    int tem;
+    scanf("%d",&n);
+    
+    printf("enter an integer ");
+    while (n){
+        tem = n % 10;
+        n /= 10;
+        printf("%d\n", tem);
+    }
+    return 0;
+}
+
+------------ Exercise 5
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+    char ch;
+    int count = 0;
+    while((ch = getchar()) != '\n'){                                    // getchar(), getch() 是#include<string.h>头文件中的标准函数
+        count ++;                                                       // getchar() 用'\n'判断，因为函数用于缓冲输入，因为只有用户按下回车才会读入，读字符
+    }                                                                   // gerch() 用'\0'判断，因为函数用于非缓冲出入，因为函数直接读入用户输入。读字符
+    printf("enter a string of characters : string length = %d", count);
+    return 0;
+}
