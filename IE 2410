@@ -245,3 +245,8 @@ int compareString(char ch1[], char ch2[]){
 	if (ch1[i] == '\0' && ch2[i] == '\0');  // 直至string结束符，两个string字符一致
 	}
 }
+
+------------ Exercise 6------------- ASCII值
+while(ch[i] > 0){
+     //在判断字符创ch[]的过程中，避免遇到space中途退出循环，ASCII（space） = 32
+}
