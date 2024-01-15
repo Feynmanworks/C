@@ -250,3 +250,16 @@ int compareString(char ch1[], char ch2[]){
 while(ch[i] > 0){
      //在判断字符创ch[]的过程中，避免遇到space中途退出循环，ASCII（space） = 32
 }
+
+------------ Exercise 6-------------迭代
+#include<stdio.h>
+int facIte(int n){
+	if (n == 0)
+		return 1;
+	return(n*facIte(n-1));
+}
+
+int main(){
+	printf("factorial %d is equal to %d\n", 5, factIte(5000000));
+	return 0;
+}
